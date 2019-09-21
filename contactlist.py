@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
-
+#
+# contactlist.py - A python program to store your contact data
+#
+# Author : Jahidul Hasan Hemal
+#
+# url: https://jhhemal.github.io
+# 
 import pickle
+print("ContactList.py".center(50,'*'))
 F = open('contacts.txt', 'rb')
 contacts = pickle.load(F)
 while True:
@@ -10,7 +17,8 @@ while True:
 		break
 
 	if uname in contacts:
-		print(f"Name : {contacts[uname]['name']}\n Mobile Number : {contacts[uname]['number']}")
+		print("Name ".ljust(14) + ": ".ljust(2) + contacts[uname]['name'])
+		print("Mobile Number :".ljust(16) + contacts[uname]['number'])
 	else:
 		print(f"You don't have information about {uname} ")
 		print("DO you want to save it? (y/n) : ")
